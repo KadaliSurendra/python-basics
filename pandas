@@ -1,0 +1,329 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOmfA5dWpmgtnP7SKmd+Yv1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/19PA1A0563/python-basics/blob/master/pandas\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "i8izZ_0tPqyx",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        },
+        "outputId": "6f15bd9d-1d1a-41d2-ca22-c0db2c5191ae"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "a=pd.Series(['a','b','c'])\n",
+        "print(a)\n"
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0    a\n",
+            "1    b\n",
+            "2    c\n",
+            "dtype: object\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "DcHaHYhVV7wn",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 187
+        },
+        "outputId": "fe8919b4-adec-437e-bf3c-49f6afdc67bf"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "b=pd.Series(['a','b','c','d'],index=[1,2,3,4])\n",
+        "print(b)\n",
+        "print(a[0])\n",
+        "print(a[:3])"
+      ],
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "1    a\n",
+            "2    b\n",
+            "3    c\n",
+            "4    d\n",
+            "dtype: object\n",
+            "a\n",
+            "0    a\n",
+            "1    b\n",
+            "2    c\n",
+            "dtype: object\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FmxlefSndRBz",
+        "colab_type": "text"
+      },
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "I9Qw6h_heV03",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "HFcX7iXnXgMU",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        },
+        "outputId": "bd6c0243-935d-4ade-f0e2-72209d9ad060"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "df=pd.DataFrame([['c 501','ram',501],['c 502','mani',502],['c 503','sum',503]],columns=['roll n.o','name','age'])\n",
+        "df\n"
+      ],
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>roll n.o</th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>c 501</td>\n",
+              "      <td>ram</td>\n",
+              "      <td>501</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>c 502</td>\n",
+              "      <td>mani</td>\n",
+              "      <td>502</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>c 503</td>\n",
+              "      <td>sum</td>\n",
+              "      <td>503</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  roll n.o  name  age\n",
+              "0    c 501   ram  501\n",
+              "1    c 502  mani  502\n",
+              "2    c 503   sum  503"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 31
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Zz3KxKQYecvB",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 173
+        },
+        "outputId": "5cdb9e64-d253-4a2a-c32e-b09ac672f779"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "df=pd.DataFrame({\"name\":[\"k.surendra\",\"jaya sri\",\"sai charitha\",\"rakshith\"],\"relation\":[\"father\",\"mother\",\"daughter\",\"son\"]})\n",
+        "df\n"
+      ],
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>name</th>\n",
+              "      <th>relation</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>k.surendra</td>\n",
+              "      <td>father</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>jaya sri</td>\n",
+              "      <td>mother</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>sai charitha</td>\n",
+              "      <td>daughter</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>rakshith</td>\n",
+              "      <td>son</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "           name  relation\n",
+              "0    k.surendra    father\n",
+              "1      jaya sri    mother\n",
+              "2  sai charitha  daughter\n",
+              "3      rakshith       son"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "scQGOkzedCiw",
+        "colab_type": "text"
+      },
+      "source": [
+        "# New Section"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "GBNbNW9OdB-b",
+        "colab_type": "text"
+      },
+      "source": [
+        "# New Section"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-OyKUDiReYbS",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "uz_8MYxtdDG-",
+        "colab_type": "text"
+      },
+      "source": [
+        "# New Section"
+      ]
+    }
+  ]
+}
